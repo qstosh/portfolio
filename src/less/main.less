@@ -41,29 +41,34 @@ h3 {
   padding-top: 3px;
 }
 
-.body {
+body {
 
   display: flex;
   flex: 1;
 }
 
-nav,
-main {
+.Main,
+.Nav {
 
   display: flex;
   flex: 1;
   padding-top: 40px;
 }
 
-.nav {
+.Main {}
+
+.Nav {
 
   flex: 0 20rem;
   height: 100%;
   flex-flow: column nowrap;
+  justify-content: center;
   background: black;
   color: white;
 
   &__item {
+
+    cursor: pointer;
 
     > span {
 
@@ -98,7 +103,7 @@ main {
       width: 180%;
     }
 
-    &.nav__item--active span:after {
+    &--active span:after {
 
       width: 160%;
       height: 4px;
