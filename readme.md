@@ -1,3 +1,3 @@
 # WTF?
 
-this is a form of [this](https://github.com/ngbp/ngbp)
+this is a fark of [this](https://github.com/ngbp/ngbp).
