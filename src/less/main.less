@@ -45,6 +45,7 @@ body {
   display: flex;
   flex: 1;
   transform: translateX(0);
+  background: black;
 }
 
 .Main,
@@ -58,15 +59,33 @@ body {
 .Main {
 
   flex: 1;
-
   justify-content: center;
-  align-content: center;
-
   transform: translateX(0);
+  background: white;
+
+  &:after {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity;
+    transition: opacity .2s ease .3s;
+  }
 
   &--nav-mode-on {
 
-    transform: translateX(0);
+    transform: translateX(-@baseline);
+
+    &:after {
+
+      opacity: 0.66;
+    }
   }
 
   &__wrapper {
@@ -97,15 +116,17 @@ body {
 
     position: relative;
     cursor: pointer;
-    height: @baseline * 2;
-    padding-left: 12px;
-
-    will-change: height;
-    transition: height .2s cubic-bezier(0.05, 0.95, 0.62, 0.86) .3s;
 
     font-size: 1.5rem;
     font-weight: 100;
-    letter-spacing: 1px;
+    letter-spacing: .1em;
+
+    padding-left: 12px;
+    height: @baseline * 3;
+    transform: translateY(0);
+
+    will-change: height transform;
+    transition: height .2s cubic-bezier(0.05, 0.95, 0.62, 0.86) .3s, transform .2s cubic-bezier(0.05, 0.95, 0.62, 0.86) .3s;
 
     > span {
 
@@ -126,47 +147,61 @@ body {
         width: calc(~"100% + 12px");
         height: 1px;
         background: @color-nav-item;
-        will-change: width;
-        transition: width .15s ease, height .15s ease;
+        will-change: width height background;
+        transition: width .15s ease, height .15s ease, background .15s ease;
       }
     }
 
     &&--active > span {
 
       color: @color-nav-item-active;
-      font-weight: bold;
+    }
+
+    &--active {
+
+      height: @baseline * 6;
+      transform: translateY(32px);
+    }
+
+    &:hover span {
+
+      // color: @color-nav-item-hover;
     }
 
     &:hover span:after {
 
       width: calc(~"100% + 44px");
+      background: @color-nav-item-hover;
     }
 
     &:active span:after {
 
       width: calc(~"100% + 64px");
+      background: @color-nav-item-active;
     }
 
     &--active span:after {
 
       width: calc(~"100% + 12px");
-      height: 2px;
+      height: 3px;
+      background: @color-nav-item-active;
     }
 
     &--active:active span:after {
 
       width: calc(~"100% + 12px");
-      height: 1px;
+      height: 3px;
     }
   }
 
   &--nav-mode-on {
 
-    transform: translateX(0);
+    transform: translateX(-@baseline);
 
     &__item {
 
-      height: @baseline * 3;
+      height: @baseline * 5;
+      transform: translateY(0) !important;
 
       > span {
 
