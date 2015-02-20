@@ -37,13 +37,27 @@
       <wrapper class="Main__wrapper" ui-view="main"></wrapper>
     </main>
     <nav class="Nav" role="navigation" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false" ng-class="{'Nav--nav-mode-on':hovering}">
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ui-sref="home" ui-sref-active="Nav__item--active"><span>home</span></a>
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ui-sref="about" ui-sref-active="Nav__item--active"><span>about</span></a>
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ui-sref="test" ui-sref-active="Nav__item--active"><span>test</span></a>
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ><span>orange</span></a>
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ><span>banana</span></a>
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ><span>avocado</span></a>
-      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ><span>apples</span></a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ui-sref="home" ui-sref-active="Nav__item--active">
+        <span title="home"></span>
+      </a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ui-sref="about" ui-sref-active="Nav__item--active">
+        <span title="about"></span>
+      </a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}" ui-sref="test" ui-sref-active="Nav__item--active">
+        <span title="test"></span>
+      </a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}">
+        <span title="orange"></span>
+      </a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}">
+        <span title="banana"></span>
+      </a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}">
+        <span title="avocado"></span>
+      </a>
+      <a class="Nav__item" ng-class="{'Nav--nav-mode-on__item':hovering}">
+        <span title="apples"></span>
+      </a>
     </nav>
     <footer></footer>
   </body>
